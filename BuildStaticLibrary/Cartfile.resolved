@@ -1,0 +1,7 @@
+github "AFNetworking/AFNetworking" "4.0.1"
+github "Instagram/IGListKit" "4.0.0"
+github "ReactiveX/RxSwift" "5.1.1"
+github "SDWebImage/SDWebImage" "5.10.0"
+github "SDWebImage/SDWebImageWebPCoder" "0.8.1"
+github "SDWebImage/libwebp-Xcode" "1.1.0"
+github "airbnb/lottie-ios" "3.1.8"

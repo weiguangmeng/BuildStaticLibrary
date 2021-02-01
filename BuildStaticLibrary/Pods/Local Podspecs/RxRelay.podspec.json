@@ -1,0 +1,22 @@
+{
+  "name": "RxRelay",
+  "version": "5.1.1",
+  "summary": "Relays for RxSwift - PublishRelay, BehaviorRelay and ReplayRelay",
+  "description": "Relays for RxSwift - PublishRelay, BehaviorRelay and ReplayRelay\n* PublishRelay\n* BehaviorRelay\n* ReplayRelay\n* Binding overloads",
+  "homepage": "https://github.com/ReactiveX/RxSwift",
+  "license": "MIT",
+  "authors": {
+    "Krunoslav Zaher": "krunoslav.zaher@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/ReactiveX/RxSwift.git",
+    "tag": "5.1.1"
+  },
+  "requires_arc": true,
+  "platforms": {
+    "ios": "9.0"
+  },
+  "swift_versions": "5.1",
+  "vendored_frameworks": "Static/RxRelay.framework",
+  "swift_version": "5.1"
+}

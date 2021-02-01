@@ -1,0 +1,27 @@
+{
+  "name": "IGListKit",
+  "version": "4.0.0",
+  "summary": "A data-driven UICollectionView framework.",
+  "homepage": "https://github.com/Instagram/IGListKit",
+  "documentation_url": "https://instagram.github.io/IGListKit",
+  "description": "A data-driven UICollectionView framework for building fast and flexible lists.",
+  "license": {
+    "type": "MIT"
+  },
+  "authors": "Instagram",
+  "social_media_url": "https://twitter.com/fbOpenSource",
+  "source": {
+    "git": "https://github.com/Instagram/IGListKit.git",
+    "tag": "4.0.0"
+  },
+  "requires_arc": true,
+  "libraries": "c++",
+  "platforms": {
+    "ios": "9.0"
+  },
+  "vendored_frameworks": "Static/IGListKit.framework",
+  "pod_target_xcconfig": {
+    "CLANG_CXX_LANGUAGE_STANDARD": "c++11",
+    "CLANG_CXX_LIBRARY": "libc++"
+  }
+}

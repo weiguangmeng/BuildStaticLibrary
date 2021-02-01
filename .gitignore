@@ -65,6 +65,9 @@ playground.xcworkspace
 # Carthage/Checkouts
 
 Carthage/Build/
+MainCarfile.resolved
+BuildStaticLibrary/Carthage/Build
+BuildStaticLibrary/CarthagePods/Static
 
 # Accio dependency management
 Dependencies/

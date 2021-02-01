@@ -1,0 +1,19 @@
+{
+  "name": "AFNetworking",
+  "version": "4.0.1",
+  "license": "MIT",
+  "summary": "A delightful networking framework for Apple platforms.",
+  "homepage": "https://github.com/AFNetworking/AFNetworking",
+  "social_media_url": "https://twitter.com/AFNetworking",
+  "authors": {
+    "Mattt Thompson": "m@mattt.me"
+  },
+  "source": {
+    "git": "https://github.com/AFNetworking/AFNetworking.git",
+    "tag": "4.0.1"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "vendored_frameworks": "Static/AFNetworking.framework"
+}

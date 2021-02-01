@@ -1,0 +1,46 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+version = '10.0'
+
+platform :ios, version
+
+$isSourceCode = 0
+$CarthagePodsPath = "./CarthagePods/"
+def carthage_pods
+  if $isSourceCode ==  0
+    pod 'IGListKit', :path => $CarthagePodsPath
+    pod 'IGListDiffKit', :path => $CarthagePodsPath
+    pod 'AFNetworking', :path => $CarthagePodsPath
+    pod 'SDWebImage', :path => $CarthagePodsPath
+    pod 'libwebp', :path => $CarthagePodsPath
+    pod 'SDWebImageWebPCoder', :path => $CarthagePodsPath
+    pod 'lottie-ios', :path => $CarthagePodsPath
+    pod 'RxSwift', :path => $CarthagePodsPath
+    pod 'RxCocoa', :path => $CarthagePodsPath
+    pod 'RxRelay', :path => $CarthagePodsPath
+  else
+    pod 'IGListKit', '4.0.0'
+    pod 'AFNetworking', '4.0.1'
+    pod 'SDWebImage', '5.10.0'
+    pod 'SDWebImageWebPCoder', '0.8.1'
+    pod 'lottie-ios', '3.1.8'
+    pod 'RxSwift', '~> 5.1.1'
+    pod 'RxCocoa', '~> 5.1.1'  
+  end
+end
+
+
+target 'BuildStaticLibrary' do
+  carthage_pods
+end
+
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      if config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].to_f < version.to_f
+        config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = version
+      end
+    end
+  end
+end
