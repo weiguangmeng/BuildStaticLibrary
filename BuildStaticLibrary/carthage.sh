@@ -33,9 +33,6 @@ XCCONFIG=$(mktemp /tmp/static.xcconfig.XXXXXX)
 # Perform clean-up on Interrupt, Hang Up, Terminate, Exit signals
 trap 'rm -f "$XCCONFIG"' INT TERM HUP EXIT
 
-# Base framework search path
-#FMWK_SEARCH_PATHS="\$(inherited) ./Carthage/Build/iOS/**"
-
 # For Xcode 12 make sure EXCLUDED_ARCHS is set to arm architectures otherwise
 # the build will fail on lipo due to duplicate architectures.
 echo 'EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_simulator__NATIVE_ARCH_64_BIT_x86_64__XCODE_1200 = arm64 arm64e armv7 armv7s' >> $XCCONFIG
