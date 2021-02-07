@@ -4,6 +4,7 @@ PODS:
   - IGListKit (4.0.0)
   - libwebp (1.1.0)
   - lottie-ios (3.1.8)
+  - MJRefresh (3.5.1)
   - RxCocoa (5.1.1)
   - RxRelay (5.1.1)
   - RxSwift (5.1.1)
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - IGListKit (from `./CarthagePods/`)
   - libwebp (from `./CarthagePods/`)
   - lottie-ios (from `./CarthagePods/`)
+  - MJRefresh (from `./CarthagePods/`)
   - RxCocoa (from `./CarthagePods/`)
   - RxRelay (from `./CarthagePods/`)
   - RxSwift (from `./CarthagePods/`)
@@ -32,6 +34,8 @@ EXTERNAL SOURCES:
   libwebp:
     :path: "./CarthagePods/"
   lottie-ios:
+    :path: "./CarthagePods/"
+  MJRefresh:
     :path: "./CarthagePods/"
   RxCocoa:
     :path: "./CarthagePods/"
@@ -50,12 +54,13 @@ SPEC CHECKSUMS:
   IGListKit: 738e03931a0ddc95ca460b672a01e0a6171e1c74
   libwebp: ae653a3fcbcc29cb588e0169fa4b2b974077ed29
   lottie-ios: a7ceac395e5573dbc690261d039b3227e79495ee
+  MJRefresh: 0f4291ab380f5c7bc225a94ff681867ebfc41f5e
   RxCocoa: e9327217ba6e075d055ea81866e20de4b71b40c6
   RxRelay: d9d661c8194a90fed731107f2116b905c995f9cb
   RxSwift: a4e807ee0d41d68ed38c6d31bca0d835a266327a
   SDWebImage: eaf00eb0b0716de7cd3da5a953d2e1304f5f63ff
   SDWebImageWebPCoder: d87fc7728ed2dd98312389efe8cbeef98a04d4e5
 
-PODFILE CHECKSUM: 863eda5f0639c5fb6be6d8be93244381c325789b
+PODFILE CHECKSUM: 9dd110d082cbf12740d81b1ca8ff740e826db241
 
 COCOAPODS: 1.10.1

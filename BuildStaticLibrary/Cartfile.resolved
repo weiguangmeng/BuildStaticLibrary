@@ -1,4 +1,5 @@
 github "AFNetworking/AFNetworking" "4.0.1"
+github "CoderMJLee/MJRefresh" "3.5.1"
 github "Instagram/IGListKit" "4.0.0"
 github "ReactiveX/RxSwift" "5.1.1"
 github "SDWebImage/SDWebImage" "5.10.0"

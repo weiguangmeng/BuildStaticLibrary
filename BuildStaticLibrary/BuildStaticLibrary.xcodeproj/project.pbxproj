@@ -113,9 +113,11 @@
 			buildConfigurationList = 3CDF3B9D25C7EC0600D8F328 /* Build configuration list for PBXNativeTarget "BuildStaticLibrary" */;
 			buildPhases = (
 				768FCF32E2FE6CE8813009D6 /* [CP] Check Pods Manifest.lock */,
+				3C6FB19325CCFA38006C49D9 /* Check Carthage Manifest.lock */,
 				3CDF3B8525C7EC0400D8F328 /* Sources */,
 				3CDF3B8625C7EC0400D8F328 /* Frameworks */,
 				3CDF3B8725C7EC0400D8F328 /* Resources */,
+				14CF6380E9F0C6D78FAA6B93 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -175,6 +177,41 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		14CF6380E9F0C6D78FAA6B93 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BuildStaticLibrary/Pods-BuildStaticLibrary-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BuildStaticLibrary/Pods-BuildStaticLibrary-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BuildStaticLibrary/Pods-BuildStaticLibrary-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3C6FB19325CCFA38006C49D9 /* Check Carthage Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Check Carthage Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${SRCROOT}/checkCarthage.sh\n";
+		};
 		768FCF32E2FE6CE8813009D6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

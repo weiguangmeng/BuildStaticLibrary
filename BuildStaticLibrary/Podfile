@@ -18,6 +18,7 @@ def carthage_pods
     pod 'RxSwift', :path => $CarthagePodsPath
     pod 'RxCocoa', :path => $CarthagePodsPath
     pod 'RxRelay', :path => $CarthagePodsPath
+    pod 'MJRefresh', :path => $CarthagePodsPath
   else
     pod 'IGListKit', '4.0.0'
     pod 'AFNetworking', '4.0.1'
@@ -25,7 +26,8 @@ def carthage_pods
     pod 'SDWebImageWebPCoder', '0.8.1'
     pod 'lottie-ios', '3.1.8'
     pod 'RxSwift', '~> 5.1.1'
-    pod 'RxCocoa', '~> 5.1.1'  
+    pod 'RxCocoa', '~> 5.1.1'
+    pod 'MJRefresh', '3.5.1'
   end
 end
 
