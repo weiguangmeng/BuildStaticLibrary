@@ -6,6 +6,7 @@ platform :ios, version
 
 $isSourceCode = 0
 $CarthagePodsPath = "./CarthagePods/"
+$CarthsSourceCodePath = './Carthage/Checkouts/'
 def carthage_pods
   if $isSourceCode ==  0
     pod 'IGListKit', :path => $CarthagePodsPath
@@ -20,14 +21,17 @@ def carthage_pods
     pod 'RxRelay', :path => $CarthagePodsPath
     pod 'MJRefresh', :path => $CarthagePodsPath
   else
-    pod 'IGListKit', '4.0.0'
-    pod 'AFNetworking', '4.0.1'
-    pod 'SDWebImage', '5.10.0'
-    pod 'SDWebImageWebPCoder', '0.8.1'
-    pod 'lottie-ios', '3.1.8'
-    pod 'RxSwift', '~> 5.1.1'
-    pod 'RxCocoa', '~> 5.1.1'
-    pod 'MJRefresh', '3.5.1'
+    pod 'IGListKit', :path => $CarthsSourceCodePath + "IGListKit"
+    pod 'IGListDiffKit', :path => $CarthsSourceCodePath + "IGListKit"
+    pod 'AFNetworking', :path => $CarthsSourceCodePath + "AFNetworking"
+    pod 'SDWebImage', :path => $CarthsSourceCodePath + "SDWebImage"
+    pod 'libwebp', :path => $CarthsSourceCodePath + "libwebp-Xcode/libwebp"
+    pod 'SDWebImageWebPCoder', :path => $CarthsSourceCodePath + "SDWebImageWebPCoder"
+    pod 'lottie-ios', :path => $CarthsSourceCodePath + "lottie-ios"
+    pod 'RxSwift', :path => $CarthsSourceCodePath + "RxSwift"
+    pod 'RxCocoa', :path => $CarthsSourceCodePath + "RxSwift"
+    pod 'RxRelay', :path => $CarthsSourceCodePath + "RxSwift"
+    pod 'MJRefresh', :path => $CarthsSourceCodePath + "MJRefresh"
   end
 end
 
