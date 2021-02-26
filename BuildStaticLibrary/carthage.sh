@@ -33,6 +33,9 @@ XCCONFIG=$(mktemp /tmp/static.xcconfig.XXXXXX)
 # Perform clean-up on Interrupt, Hang Up, Terminate, Exit signals
 trap 'rm -f "$XCCONFIG"' INT TERM HUP EXIT
 
+# Base framework search path
+FMWK_SEARCH_PATHS="\$(inherited) ./Carthage/Build/iOS/**"
+
 # For Xcode 12 make sure EXCLUDED_ARCHS is set to arm architectures otherwise
 # the build will fail on lipo due to duplicate architectures.
 echo 'EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_simulator__NATIVE_ARCH_64_BIT_x86_64__XCODE_1200 = arm64 arm64e armv7 armv7s' >> $XCCONFIG
@@ -41,6 +44,7 @@ echo 'EXCLUDED_ARCHS = $(inherited) $(EXCLUDED_ARCHS__EFFECTIVE_PLATFORM_SUFFIX_
 # Write properties to the temp xconfig file
 echo "MACH_O_TYPE = staticlib" >> $XCCONFIG
 echo "DEBUG_INFORMATION_FORMAT = dwarf" >> $XCCONFIG
+echo "FRAMEWORK_SEARCH_PATHS = $FMWK_SEARCH_PATHS" >> $XCCONFIG
 
 # Echo outcome
 echo
@@ -66,7 +70,18 @@ fi
 
 cp Cartfile.resolved MainCartfile.resolved
 
-if [ ! -f "CarthagePods/Static" ];then
+if [ -d "CarthagePods/Static" ];then
     rm -rf CarthagePods/Static
 fi
+
+#local pod support patch start
+if [ -f "Carthage/Checkouts/libwebp-Xcode/libwebp.podspec" -a -d Carthage/Checkouts/libwebp-Xcode/libwebp ];then
+    mv Carthage/Checkouts/libwebp-Xcode/libwebp.podspec Carthage/Checkouts/libwebp-Xcode/libwebp/libwebp.podspec
+fi
+
+if [ -f "Carthage/Checkouts/IGListKit/scripts/version.sh" ]; then
+    echo -n "cd \"\$(dirname \"\$(dirname \"\$0\")\")\" || exit 1\n\nexec /usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' \"\$(pwd)/Source/Info.plist\"" > Carthage/Checkouts/IGListKit/scripts/version.sh
+fi
+#local pod support patch end
+
 cp -rf Carthage/Build/iOS/Static CarthagePods
