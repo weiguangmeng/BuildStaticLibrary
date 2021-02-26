@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'libwebp'
-  s.version          = '1.1.0'
+  s.version          = '1.2.0'
   s.summary          = 'Library to encode and decode images in WebP format.'
   s.homepage         = 'https://developers.google.com/speed/webp/'
   s.authors          = 'Google Inc.'
@@ -10,8 +10,8 @@ Pod::Spec.new do |s|
   s.compiler_flags = '-D_THREAD_SAFE'
   s.requires_arc = false
 
-  s.osx.deployment_target = '10.8'
-  s.ios.deployment_target = '6.0'
+  s.osx.deployment_target = '10.10'
+  s.ios.deployment_target = '8.0'
   s.tvos.deployment_target = '9.0'
   s.watchos.deployment_target = '2.0'
 
