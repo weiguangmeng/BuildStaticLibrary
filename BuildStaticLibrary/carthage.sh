@@ -80,7 +80,7 @@ if [ -f "Carthage/Checkouts/libwebp-Xcode/libwebp.podspec" -a -d Carthage/Checko
 fi
 
 if [ -f "Carthage/Checkouts/IGListKit/scripts/version.sh" ]; then
-    echo -n "cd \"\$(dirname \"\$(dirname \"\$0\")\")\" || exit 1\n\nexec /usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' \"\$(pwd)/Source/Info.plist\"" > Carthage/Checkouts/IGListKit/scripts/version.sh
+    echo -e "cd \"\$(dirname \"\$(dirname \"\$0\")\")\" || exit 1\n\nexec /usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' \"\$(pwd)/Source/Info.plist\"" > Carthage/Checkouts/IGListKit/scripts/version.sh
 fi
 #local pod support patch end
 
