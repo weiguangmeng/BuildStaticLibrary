@@ -20,10 +20,14 @@ if [ ! -f "${SRCROOT}/MainCartfile.resolved" ];then
     echo "${SRCROOT}/MainCartfile.resolved not exist"
     ${SRCROOT}/carthage.sh -I
 else
-    comm -23 "${SRCROOT}/Cartfile.resolved" "${SRCROOT}/MainCartfile.resolved" > CartfileDiff
-    if [ -s "CartfileDiff" ] ; then
+    removeCartfileResolved="${SRCROOT}/Cartfile.resolved"
+    localCarfileResolved="${SRCROOT}/MainCartfile.resolved"
+    comm -23 $removeCartfileResolved $localCarfileResolved > CartfileDiff
+    if [ -s "CartfileDiff" -a $removeCartfileResolved -nt $localCarfileResolved ] ; then
         echo "carthage need update!"
         ${SRCROOT}/carthage.sh
+    else
+        echo "carthage need not update!"
     fi
     rm CartfileDiff
 fi
